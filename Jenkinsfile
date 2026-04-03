@@ -56,6 +56,7 @@ pipeline {
 
                     // Deploy the application to App Engine
                      'gcloud app deploy --quiet'
+                     '''
                 }
             }
         }

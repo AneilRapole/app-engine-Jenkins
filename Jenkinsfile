@@ -45,18 +45,18 @@ pipeline {
                 script {
                     sh '''
                     # Check gcloud installation and working directory
-                    '/usr/bin/gcloud --version'
-                     'pwd'
-                    'ls -l'  // List files to verify app.yaml presence
+                    /usr/bin/gcloud --version
+                     pwd
+                    ls -l  // List files to verify app.yaml presence
 
                     # Authenticate with Google Cloud
-                     'gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}'
+                     gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
 
                     # Set the GCP project
-                     '/usr/bin/gcloud config set project $PROJECT_ID'
+                     /usr/bin/gcloud config set project $PROJECT_ID
 
                     # Deploy the application to App Engine
-                     '/usr/bin/gcloud app deploy --quiet'
+                     /usr/bin/gcloud app deploy --quiet
                      '''
                 }
             }

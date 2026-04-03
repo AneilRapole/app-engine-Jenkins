@@ -47,7 +47,7 @@ pipeline {
                     # Check gcloud installation and working directory
                     /usr/bin/gcloud --version
                      pwd
-                    ls -l  // List files to verify app.yaml presence
+                    ls -l  # List files to verify app.yaml presence
 
                     # Authenticate with Google Cloud
                      gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}

@@ -45,7 +45,7 @@ pipeline {
                 script {
                     sh '''
                     # Check gcloud installation and working directory
-                    '/usr/bin/gcloud--version'
+                    '/usr/bin/gcloud --version'
                      'pwd'
                     'ls -l'  // List files to verify app.yaml presence
 

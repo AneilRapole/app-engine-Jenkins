@@ -42,19 +42,20 @@ pipeline {
         stage('Deploy to Google App Engine') {
             steps {
                 script {
+                    sh '''
                     // Check gcloud installation and working directory
-                    sh 'gcloud --version'
-                    sh 'pwd'
-                    sh 'ls -l'  // List files to verify app.yaml presence
+                    'gcloud --version'
+                     'pwd'
+                    'ls -l'  // List files to verify app.yaml presence
 
                     // Authenticate with Google Cloud
-                    sh 'gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}'
+                     'gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}'
 
                     // Set the GCP project
-                    sh 'gcloud config set project $PROJECT_ID'
+                     'gcloud config set project $PROJECT_ID'
 
                     // Deploy the application to App Engine
-                    sh 'gcloud app deploy --quiet'
+                     'gcloud app deploy --quiet'
                 }
             }
         }

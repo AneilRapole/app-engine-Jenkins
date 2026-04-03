@@ -3,7 +3,8 @@ pipeline {
 
     environment {
         PROJECT_ID = 'networkvpc-491202'
-        GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-service-account')  // Service account credential
+        GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-service-account')  # Service account credential
+        PATH = "/usr/local/bin:$PATH"
     }
 
     stages {
